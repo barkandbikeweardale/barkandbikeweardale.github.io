@@ -19,6 +19,7 @@
         }
         nav {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             background: #333;
             padding: 10px 0;
@@ -27,6 +28,7 @@
             color: white;
             text-decoration: none;
             padding: 10px 20px;
+            text-align: center;
         }
         nav a:hover {
             background: #575757;
@@ -36,6 +38,18 @@
         }
         .section {
             margin-bottom: 20px;
+        }
+        @media (max-width: 600px) {
+            header {
+                padding: 60px 10px;
+            }
+            nav a {
+                flex: 1 100%;
+                padding: 10px 0;
+            }
+            .container {
+                padding: 10px;
+            }
         }
     </style>
 </head>
