@@ -39,9 +39,23 @@
         .section {
             margin-bottom: 20px;
         }
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            padding: 10px;
+        }
         @media (max-width: 600px) {
             header {
                 padding: 60px 10px;
+            }
+            .menu-icon {
+                display: block;
+            }
+            nav {
+                flex-direction: column;
+                display: none;
             }
             nav a {
                 flex: 1 100%;
@@ -50,6 +64,9 @@
             .container {
                 padding: 10px;
             }
+            nav.active {
+                display: flex;
+            }
         }
     </style>
 </head>
@@ -57,7 +74,8 @@
     <header>
         <h1>Welcome to Bark and Bike Weardale</h1>
     </header>
-    <nav>
+    <div class="menu-icon" id="menuIcon">&#9776;</div>
+    <nav id="navMenu">
         <a href="#about">About Us</a>
         <a href="#accommodation">Accommodation</a>
         <a href="#activities">Activities</a>
@@ -103,5 +121,11 @@
             </ul>
         </section>
     </div>
+    <script>
+        document.getElementById('menuIcon').addEventListener('click', function() {
+            var navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
